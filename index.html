@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas & Pug</title>
+</head>
+<body>
+    <canvas width="500" height="600" id="canvas"></canvas> 
+   
+   <script>
+    var ctx = document.getElementById("canvas").getContext('2d');
+
+    var lingrad = ctx.createLinearGradient(0, 0, 0, 600);
+    lingrad.addColorStop(0, '#00ABEB');
+    lingrad.addColorStop(0.665, '#fff');
+    lingrad.addColorStop(0.665, '#26C000');
+    lingrad.addColorStop(1, '#fff');
+
+    ctx.fillStyle = lingrad;
+    ctx.fillRect(0, 0, 500, 600);
+
+    ctx.fillStyle = "grey";
+    ctx.fillRect(200, 200, 200, 200);
+
+    ctx.fillStyle = "#363333"
+    ctx.beginPath();
+    ctx.moveTo(150, 200);
+    ctx.lineTo(300, 100);
+    ctx.lineTo(450, 200);
+    ctx.fill();
+
+    ctx.fillStyle = "black";
+    ctx.strokeRect(220, 220, 100, 100);
+
+    ctx.clearRect(230, 230, 80, 80);
+
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.moveTo(75,40);
+    ctx.bezierCurveTo(75,37,70,25,50,25);
+    ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+    ctx.bezierCurveTo(20,80,40,102,75,120);
+    ctx.bezierCurveTo(110,102,130,80,130,62.5);
+    ctx.bezierCurveTo(130,62.5,130,25,100,25);
+    ctx.bezierCurveTo(85,25,75,37,75,40);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(400, 75, 50, 0.2 * Math.PI, 1.8 * Math.PI);
+    ctx.lineTo(400, 75);
+    ctx.closePath();
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+
+    
+  </script>
+</body>
+</html>
